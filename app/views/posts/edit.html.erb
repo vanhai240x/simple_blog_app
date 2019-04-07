@@ -1,5 +1,7 @@
-<h1>Add Post</h1>
-<%= form_for :post, url: posts_path do |f| %>
+<h1 class="mb-30">
+        <span class="label label-primary">Edit Posts</span>
+    </h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
     <% if @post.errors.any? %>
         <% @post.errors.full_messages.each do |msg| %>
             <div class="alert alert-danger"><%= msg %></div>
@@ -14,6 +16,6 @@
         <%= f.text_area(:body, {:class => 'form-control'}) %>
     </p>
     <p>
-        <%= f.submit({:class => 'btn btn-success'}) %>
+        <%= f.submit('Send Update', {:class => 'btn btn-success'}) %>
     </p>
 <% end %>

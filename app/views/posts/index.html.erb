@@ -1,5 +1,18 @@
-<h1>Blog Posts</h1>
+<h1 class="mb-30">
+    <span class="label label-danger">Blog Posts</span>
+</h1>
+
 <% @posts.each do |post| %>
-    <h3><%= post.title %></h3>
-    <p><%= post.body %></p>
+    <!-- <div class="well">
+        <h3><%= post.title %></h3>
+        <p><%= post.body %></p>
+        <%= link_to  "Read More", post_path(post), :class => 'btn btn-default' %>
+    </div> -->
+    <div class="panel panel-info">
+        <div class="panel-heading"><h3><%= post.title %></h3></div>
+        <div class="panel-body">
+            <%= post.body %>
+        </div>
+        <%= link_to  "Read More", post_path(post), :class => 'btn btn-primary m-15' %>
+    </div>
 <% end %>
