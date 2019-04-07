@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about', as: 'about'
 
-  resources :posts  # resources de^? la`m gi`
+  resources :posts do # resources de^? la`m gi`
+    resources :comments
+  end
 end
