@@ -7,6 +7,11 @@ gem "sprockets-rails", :require => "sprockets/railtie"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "jquery-rails"
 
+group :production do
+  gem "pg",             "~> 0.18"
+  gem "rails_12factor", "0.0.2"
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use mysql as the database for Active Record
