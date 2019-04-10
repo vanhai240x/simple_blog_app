@@ -2,7 +2,8 @@ class PostsController < ApplicationController
     http_basic_authenticate_with name: "admin", password: "123456", except: [:index, :show]
 
     def index
-        @posts = Post.all
+        # @posts  = Post.all
+        @posts   = Post.all.page(params[:page]).per(4)
     end
 
     def show
@@ -14,7 +15,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        #render plain: params[:post].inspect
+        # render plain: params[:post].inspect
         @post = Post.new(post_params)
 
         if(@post.save)
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
         else
             render 'new'
         end
+        # flash[:success] = "Register success"
     end 
 
     def edit
@@ -39,6 +41,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id]) 
         
         if(@post.update(post_params))
+            flash[:success] = "Register success"
             redirect_to @post
         else
             render 'edit'

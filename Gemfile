@@ -7,6 +7,13 @@ gem "sprockets-rails", :require => "sprockets/railtie"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "jquery-rails"
 
+# gíup phân trang
+gem 'kaminari'
+# tạo form tìm kiếm
+gem 'ransack' 
+# giao diện đẹp cho phân trang
+gem 'bootstrap-kaminari-views'  
+
 group :production do
   gem "pg",             "~> 0.18"
   gem "rails_12factor", "0.0.2"

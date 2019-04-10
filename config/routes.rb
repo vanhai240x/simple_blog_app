@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :posts do   # resources ???
     resources :comments
   end
+
 end
